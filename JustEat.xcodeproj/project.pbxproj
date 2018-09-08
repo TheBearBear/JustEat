@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		93878A34214475CD00C5511B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A33214475CD00C5511B /* AppDelegate.swift */; };
 		93878A36214475CD00C5511B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A35214475CD00C5511B /* ViewController.swift */; };
-		93878A39214475CD00C5511B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93878A37214475CD00C5511B /* Main.storyboard */; };
 		93878A3B214475D000C5511B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3A214475D000C5511B /* Assets.xcassets */; };
 		93878A3E214475D000C5511B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3C214475D000C5511B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		93878A30214475CD00C5511B /* JustEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93878A33214475CD00C5511B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93878A35214475CD00C5511B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		93878A38214475CD00C5511B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93878A3A214475D000C5511B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93878A3D214475D000C5511B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93878A3F214475D000C5511B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			children = (
 				93878A33214475CD00C5511B /* AppDelegate.swift */,
 				93878A35214475CD00C5511B /* ViewController.swift */,
-				93878A37214475CD00C5511B /* Main.storyboard */,
 				93878A3A214475D000C5511B /* Assets.xcassets */,
 				93878A3C214475D000C5511B /* LaunchScreen.storyboard */,
 				93878A3F214475D000C5511B /* Info.plist */,
@@ -124,7 +121,6 @@
 			files = (
 				93878A3E214475D000C5511B /* LaunchScreen.storyboard in Resources */,
 				93878A3B214475D000C5511B /* Assets.xcassets in Resources */,
-				93878A39214475CD00C5511B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,14 +139,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		93878A37214475CD00C5511B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93878A38214475CD00C5511B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		93878A3C214475D000C5511B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,6 +269,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A56S2B36WE;
 				INFOPLIST_FILE = JustEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A56S2B36WE;
 				INFOPLIST_FILE = JustEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
