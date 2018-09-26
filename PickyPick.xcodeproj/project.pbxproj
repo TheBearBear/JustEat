@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9321765C2145FD4C0045581F /* constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* constraints.swift */; };
 		93878A34214475CD00C5511B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A33214475CD00C5511B /* AppDelegate.swift */; };
-		93878A36214475CD00C5511B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A35214475CD00C5511B /* ViewController.swift */; };
+		93878A36214475CD00C5511B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A35214475CD00C5511B /* HomeViewController.swift */; };
 		93878A3B214475D000C5511B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3A214475D000C5511B /* Assets.xcassets */; };
 		93878A3E214475D000C5511B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3C214475D000C5511B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		93878A30214475CD00C5511B /* JustEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9321765B2145FD4C0045581F /* constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constraints.swift; sourceTree = "<group>"; };
+		93878A30214475CD00C5511B /* PickyPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickyPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93878A33214475CD00C5511B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93878A35214475CD00C5511B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93878A35214475CD00C5511B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		93878A3A214475D000C5511B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93878A3D214475D000C5511B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93878A3F214475D000C5511B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		93878A27214475CD00C5511B = {
 			isa = PBXGroup;
 			children = (
-				93878A32214475CD00C5511B /* JustEat */,
+				93878A32214475CD00C5511B /* PickyPick */,
 				93878A31214475CD00C5511B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,29 +46,30 @@
 		93878A31214475CD00C5511B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93878A30214475CD00C5511B /* JustEat.app */,
+				93878A30214475CD00C5511B /* PickyPick.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93878A32214475CD00C5511B /* JustEat */ = {
+		93878A32214475CD00C5511B /* PickyPick */ = {
 			isa = PBXGroup;
 			children = (
+				93878A3F214475D000C5511B /* Info.plist */,
 				93878A33214475CD00C5511B /* AppDelegate.swift */,
-				93878A35214475CD00C5511B /* ViewController.swift */,
+				9321765B2145FD4C0045581F /* constraints.swift */,
+				93878A35214475CD00C5511B /* HomeViewController.swift */,
 				93878A3A214475D000C5511B /* Assets.xcassets */,
 				93878A3C214475D000C5511B /* LaunchScreen.storyboard */,
-				93878A3F214475D000C5511B /* Info.plist */,
 			);
-			path = JustEat;
+			path = PickyPick;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93878A2F214475CD00C5511B /* JustEat */ = {
+		93878A2F214475CD00C5511B /* PickyPick */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "JustEat" */;
+			buildConfigurationList = 93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "PickyPick" */;
 			buildPhases = (
 				93878A2C214475CD00C5511B /* Sources */,
 				93878A2D214475CD00C5511B /* Frameworks */,
@@ -76,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = JustEat;
+			name = PickyPick;
 			productName = JustEat;
-			productReference = 93878A30214475CD00C5511B /* JustEat.app */;
+			productReference = 93878A30214475CD00C5511B /* PickyPick.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93878A2B214475CD00C5511B /* Build configuration list for PBXProject "JustEat" */;
+			buildConfigurationList = 93878A2B214475CD00C5511B /* Build configuration list for PBXProject "PickyPick" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93878A2F214475CD00C5511B /* JustEat */,
+				93878A2F214475CD00C5511B /* PickyPick */,
 			);
 		};
 /* End PBXProject section */
@@ -131,7 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93878A36214475CD00C5511B /* ViewController.swift in Sources */,
+				9321765C2145FD4C0045581F /* constraints.swift in Sources */,
+				93878A36214475CD00C5511B /* HomeViewController.swift in Sources */,
 				93878A34214475CD00C5511B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,15 +271,14 @@
 		93878A43214475D000C5511B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;
-				INFOPLIST_FILE = JustEat/Info.plist;
+				INFOPLIST_FILE = PickyPick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TheBearBear.JustEat;
+				PRODUCT_BUNDLE_IDENTIFIER = TheBearBear.PickyPick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -285,15 +288,14 @@
 		93878A44214475D000C5511B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;
-				INFOPLIST_FILE = JustEat/Info.plist;
+				INFOPLIST_FILE = PickyPick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TheBearBear.JustEat;
+				PRODUCT_BUNDLE_IDENTIFIER = TheBearBear.PickyPick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,7 +305,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93878A2B214475CD00C5511B /* Build configuration list for PBXProject "JustEat" */ = {
+		93878A2B214475CD00C5511B /* Build configuration list for PBXProject "PickyPick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93878A40214475D000C5511B /* Debug */,
@@ -312,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "JustEat" */ = {
+		93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "PickyPick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93878A43214475D000C5511B /* Debug */,
