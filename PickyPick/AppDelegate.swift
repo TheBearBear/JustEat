@@ -19,7 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = HomeViewController()
-        window!.rootViewController = homeViewController
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.red,
+             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 40) ??
+                UIFont.systemFont(ofSize: 40)]
+        
+        window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         return true
     }

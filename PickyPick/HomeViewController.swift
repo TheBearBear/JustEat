@@ -10,90 +10,56 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var mainView: PreferenceView! { return self.view as! PreferenceView }
+    let icon: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "mealIcon")
+        imageView.image = image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let startButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func loadView() {
-        self.view = PreferenceView(frame: UIScreen.main.bounds)
-    }
-}
 
-class PreferenceView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+        view.backgroundColor = .white
+        setupNav()
         setup()
+//        view.backgroundColor = UIColor(red: 243/233, green: 71/255, blue: 66/255, alpha: 1.0)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setup() {
-        setupViews()
-        setupConstraints()
-    }
-    
-    private func setupViews() {
-        self.addSubview(backgroundView)
-        self.addSubview(mainStack)
+    func setupNav() {
+        self.navigationItem.title = "PickyPick"
         
-        mainStack.addArrangedSubview(buttonsStack)
-        buttonsStack.addArrangedSubview(UIView(frame: .zero))
-        buttonsStack.addArrangedSubview(mealButton)
-        buttonsStack.addArrangedSubview(dessertButton)
-        buttonsStack.addArrangedSubview(UIView(frame: .zero))
-    }
+//        let navLabel = UILabel()
+//        let navTitle = NSMutableAttributedString(string: "Picky", attributes:[
+//            NSAttributedStringKey.foregroundColor: UIColor.white,
+//            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 40, weight: UIFont.Weight.light)])
+//
+//        navTitle.append(NSMutableAttributedString(string: "Pick", attributes:[
+//            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 40),
+//            NSAttributedStringKey.foregroundColor: UIColor(red: 244/255, green: 244/255, blue: 34/255, alpha: 1)]))
+//
+//        navLabel.attributedText = navTitle
+//        self.navigationItem.titleView = navLabel
+//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 243/233, green: 71/255, blue: 66/255, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barStyle = .black
     
-    private func setupConstraints() {
-        mainStack.pinEdges(to: self)
-        backgroundView.pinEdges(to: self)
         
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    // MARK: - Views
-    
-    let backgroundView: UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .red
-        return view
-    }()
-    
-    let mainStack: UIStackView = {
-        let stackView = UIStackView(frame: .zero)
-        stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 10, left: 30, bottom: 30, right: 30)
-        return stackView
-    }()
-    
-    let mealButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Meal", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 40)
-        button.setTitleColor(.white, for: .normal)
-        return button
-    }()
-    
-    let dessertButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Dessert", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 40)
-        button.setTitleColor(.white, for: .normal)
-        return button
-    }()
-    
-    let buttonsStack: UIStackView = {
-        let stackView = UIStackView(frame: .zero)
-        stackView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
-        return stackView
-    }()
-}
+    func setup() {
+        view.addSubview(icon)
+        
+        icon.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        icon.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
 
+    }
+}
