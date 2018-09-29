@@ -19,7 +19,11 @@ class HomeViewController: UIViewController {
     }()
     
     let startButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.setTitle("Start", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = UIColor.red
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -46,20 +50,27 @@ class HomeViewController: UIViewController {
 //
 //        navLabel.attributedText = navTitle
 //        self.navigationItem.titleView = navLabel
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 243/233, green: 71/255, blue: 66/255, alpha: 1.0)
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 243/233, green: 71/255, blue: 66/255, alpha: 1.0)
+//        self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
-    
         
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setup() {
         view.addSubview(icon)
+        view.addSubview(startButton)
         
         icon.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         icon.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        
+        startButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        startButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
     }
 }
