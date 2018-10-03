@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().largeTitleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.white,
+            [NSAttributedStringKey.foregroundColor: UIColor.mainRed,
              NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 40) ??
                 UIFont.systemFont(ofSize: 40)]
 

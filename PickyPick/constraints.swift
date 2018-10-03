@@ -25,3 +25,7 @@ extension UIView {
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
+
+extension UIColor {
+    static var mainRed = UIColor(red: 243/233, green: 71/255, blue: 66/255, alpha: 1.0)
+}
