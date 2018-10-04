@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9321765C2145FD4C0045581F /* constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* constraints.swift */; };
+		9321765C2145FD4C0045581F /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* extension.swift */; };
 		93878A34214475CD00C5511B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A33214475CD00C5511B /* AppDelegate.swift */; };
 		93878A36214475CD00C5511B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A35214475CD00C5511B /* HomeViewController.swift */; };
 		93878A3B214475D000C5511B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3A214475D000C5511B /* Assets.xcassets */; };
 		93878A3E214475D000C5511B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3C214475D000C5511B /* LaunchScreen.storyboard */; };
+		938D9BEE2166C6D8007B4798 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9BED2166C6D8007B4798 /* AppHelper.swift */; };
+		938D9BF12166C796007B4798 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9BF02166C796007B4798 /* Request.swift */; };
+		B32209372B0940451B06F84E /* Pods_PickyPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9321765B2145FD4C0045581F /* constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constraints.swift; sourceTree = "<group>"; };
+		5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.release.xcconfig"; sourceTree = "<group>"; };
+		9321765B2145FD4C0045581F /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		93878A30214475CD00C5511B /* PickyPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickyPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93878A33214475CD00C5511B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93878A35214475CD00C5511B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		93878A3A214475D000C5511B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93878A3D214475D000C5511B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93878A3F214475D000C5511B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		938D9BED2166C6D8007B4798 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		938D9BF02166C796007B4798 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickyPick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32209372B0940451B06F84E /* Pods_PickyPick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5106B14D05006F172BBFFC37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */,
+				5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		93878A27214475CD00C5511B = {
 			isa = PBXGroup;
 			children = (
 				93878A32214475CD00C5511B /* PickyPick */,
 				93878A31214475CD00C5511B /* Products */,
+				5106B14D05006F172BBFFC37 /* Pods */,
+				9B0517B8A9B57A805017C21C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +76,46 @@
 			children = (
 				93878A3F214475D000C5511B /* Info.plist */,
 				93878A33214475CD00C5511B /* AppDelegate.swift */,
-				9321765B2145FD4C0045581F /* constraints.swift */,
-				93878A35214475CD00C5511B /* HomeViewController.swift */,
 				93878A3A214475D000C5511B /* Assets.xcassets */,
 				93878A3C214475D000C5511B /* LaunchScreen.storyboard */,
+				938D9BF22166C81E007B4798 /* Controller */,
+				938D9BEC2166C69C007B4798 /* Helper */,
+				938D9BEF2166C760007B4798 /* Networking */,
 			);
 			path = PickyPick;
+			sourceTree = "<group>";
+		};
+		938D9BEC2166C69C007B4798 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9321765B2145FD4C0045581F /* extension.swift */,
+				938D9BED2166C6D8007B4798 /* AppHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		938D9BEF2166C760007B4798 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				938D9BF02166C796007B4798 /* Request.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		938D9BF22166C81E007B4798 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93878A35214475CD00C5511B /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9B0517B8A9B57A805017C21C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "PickyPick" */;
 			buildPhases = (
+				9C65F80749FB4E618F313F3B /* [CP] Check Pods Manifest.lock */,
 				93878A2C214475CD00C5511B /* Sources */,
 				93878A2D214475CD00C5511B /* Frameworks */,
 				93878A2E214475CD00C5511B /* Resources */,
+				EA82CC08FF6B110A1168811E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,14 +185,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C65F80749FB4E618F313F3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickyPick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA82CC08FF6B110A1168811E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93878A2C214475CD00C5511B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9321765C2145FD4C0045581F /* constraints.swift in Sources */,
+				9321765C2145FD4C0045581F /* extension.swift in Sources */,
 				93878A36214475CD00C5511B /* HomeViewController.swift in Sources */,
+				938D9BF12166C796007B4798 /* Request.swift in Sources */,
 				93878A34214475CD00C5511B /* AppDelegate.swift in Sources */,
+				938D9BEE2166C6D8007B4798 /* AppHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +367,7 @@
 		};
 		93878A43214475D000C5511B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;
@@ -287,6 +385,7 @@
 		};
 		93878A44214475D000C5511B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;

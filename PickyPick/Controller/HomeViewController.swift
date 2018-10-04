@@ -69,7 +69,6 @@ class HomeViewController: UIViewController {
     
     @objc func clicked(_ sender: UIButton) {
         print(sender.currentTitle!)
-//        let preferenceVC = PreferenceViewController()
-//        self.navigationController?.pushViewController(preferenceVC, animated: true)
+        print(AppHelper.getTodayDate())
     }
 }
