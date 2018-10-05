@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
+    var locationManager: CLLocationManager = CLLocationManager()
     let buttons = ["Breakfast", "Lunch", "Dinner", "Dessert", "Coffee & Tea"]
     
     let icon: UIImageView = {
@@ -24,10 +26,24 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         setupNav()
         setupButtons()
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
     
     func setupNav() {
         self.navigationItem.title = "PickyPick"
