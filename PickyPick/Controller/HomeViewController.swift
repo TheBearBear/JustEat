@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     let buttons = ["Breakfast", "Lunch", "Dinner", "Dessert", "Coffee & Tea"]
+    var currentLocation: CLLocation?
     
     let icon: UIImageView = {
         let imageView = UIImageView()
@@ -37,7 +38,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print("Found user's location: \(location)")
+//            print("Found user's location: \(location)")
+            currentLocation = location
+            locationManager.stopUpdatingLocation()
         }
     }
     
@@ -84,7 +87,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func clicked(_ sender: UIButton) {
-        print(sender.currentTitle!)
-        print(AppHelper.getTodayDate())
+        let clicked = sender.currentTitle!
+
+        guard let currentLocation = currentLocation else {
+            print("no address")
+            return
+        }
+        
+        let lat = "\(currentLocation.coordinate.latitude)"
+        let long = "\(currentLocation.coordinate.longitude)"
+        print(Request.searchVenues(clicked: clicked, latitude: lat, longitude: long))
     }
 }
