@@ -38,7 +38,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-//            print("Found user's location: \(location)")
             currentLocation = location
             locationManager.stopUpdatingLocation()
         }
@@ -96,6 +95,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         let lat = "\(currentLocation.coordinate.latitude)"
         let long = "\(currentLocation.coordinate.longitude)"
-        print(Request.searchVenues(clicked: clicked, latitude: lat, longitude: long))
+        Request.searchVenues(clicked: clicked, latitude: lat, longitude: long) { response in
+            print(response!)
+        }
     }
 }
