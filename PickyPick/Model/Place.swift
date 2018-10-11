@@ -11,4 +11,7 @@ import Foundation
 struct Place {
     let name: String?
     let address: String?
+    let distance: Int?
+    let formattedAddress: [String]?
+    let icon: String?
 }

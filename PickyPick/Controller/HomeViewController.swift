@@ -15,24 +15,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let buttons = ["Breakfast", "Lunch", "Dinner", "Dessert", "Coffee & Tea"]
     var currentLocation: CLLocation?
     
-    let icon: UIImageView = {
-        let imageView = UIImageView()
-        let image = UIImage(named: "mealIcon")
-        imageView.image = image
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.white
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        setupNav()
+//        setupNav()
         setupButtons()
     }
     
@@ -47,13 +40,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
     
-    func setupNav() {
-        self.navigationItem.title = "PickyPick"
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
+//    func setupNav() {
+//        self.navigationItem.title = "PickyPick"
+//        self.navigationController?.navigationBar.barTintColor = UIColor.white
+//        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.barStyle = .black
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+//    }
     
     func setupButtons() {
         var buttonsDisplay = [UIView]()
@@ -74,14 +67,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
-        stackView.spacing = 50
+        stackView.spacing = 30
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
@@ -96,7 +89,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         let lat = "\(currentLocation.coordinate.latitude)"
         let long = "\(currentLocation.coordinate.longitude)"
         Request.searchVenues(clicked: clicked, latitude: lat, longitude: long) { response in
-            print(response!)
+            let selectionVC = SelectionViewController()
+            selectionVC.jsonData = response!
+            self.present(selectionVC, animated: true, completion: nil)
         }
     }
 }

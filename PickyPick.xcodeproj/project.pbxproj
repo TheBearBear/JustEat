@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9321765C2145FD4C0045581F /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* extension.swift */; };
+		9321765C2145FD4C0045581F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* Extensions.swift */; };
 		935A2942216AFBDC000D2702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2941216AFBDC000D2702 /* Place.swift */; };
 		935A2944216B074F000D2702 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2943216B074F000D2702 /* SelectionViewController.swift */; };
+		936E180C216EA706007F47E6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936E180B216EA706007F47E6 /* SwiftyJSON.framework */; };
+		936F59D3216FEBA60098BC50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F59D2216FEBA60098BC50 /* Constants.swift */; };
 		93878A34214475CD00C5511B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A33214475CD00C5511B /* AppDelegate.swift */; };
 		93878A36214475CD00C5511B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93878A35214475CD00C5511B /* HomeViewController.swift */; };
 		93878A3B214475D000C5511B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93878A3A214475D000C5511B /* Assets.xcassets */; };
@@ -21,9 +23,11 @@
 
 /* Begin PBXFileReference section */
 		5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.release.xcconfig"; sourceTree = "<group>"; };
-		9321765B2145FD4C0045581F /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		9321765B2145FD4C0045581F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		935A2941216AFBDC000D2702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		935A2943216B074F000D2702 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		936E180B216EA706007F47E6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		936F59D2216FEBA60098BC50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93878A30214475CD00C5511B /* PickyPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickyPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93878A33214475CD00C5511B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93878A35214475CD00C5511B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B32209372B0940451B06F84E /* Pods_PickyPick.framework in Frameworks */,
+				936E180C216EA706007F47E6 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,13 @@
 				935A2941216AFBDC000D2702 /* Place.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		936E1808216E8216007F47E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		93878A27214475CD00C5511B = {
@@ -91,6 +103,7 @@
 				93878A3A214475D000C5511B /* Assets.xcassets */,
 				93878A3C214475D000C5511B /* LaunchScreen.storyboard */,
 				935A2940216AED31000D2702 /* Model */,
+				936E1808216E8216007F47E6 /* View */,
 				938D9BF22166C81E007B4798 /* Controller */,
 				938D9BEC2166C69C007B4798 /* Helper */,
 				938D9BEF2166C760007B4798 /* Networking */,
@@ -101,8 +114,9 @@
 		938D9BEC2166C69C007B4798 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				9321765B2145FD4C0045581F /* extension.swift */,
+				9321765B2145FD4C0045581F /* Extensions.swift */,
 				938D9BED2166C6D8007B4798 /* AppHelper.swift */,
+				936F59D2216FEBA60098BC50 /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		9B0517B8A9B57A805017C21C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				936E180B216EA706007F47E6 /* SwiftyJSON.framework */,
 				C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */,
 			);
 			name = Frameworks;
@@ -226,10 +241,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -243,13 +260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9321765C2145FD4C0045581F /* extension.swift in Sources */,
+				9321765C2145FD4C0045581F /* Extensions.swift in Sources */,
 				93878A36214475CD00C5511B /* HomeViewController.swift in Sources */,
 				938D9BF12166C796007B4798 /* Request.swift in Sources */,
 				935A2942216AFBDC000D2702 /* Place.swift in Sources */,
 				93878A34214475CD00C5511B /* AppDelegate.swift in Sources */,
 				938D9BEE2166C6D8007B4798 /* AppHelper.swift in Sources */,
 				935A2944216B074F000D2702 /* SelectionViewController.swift in Sources */,
+				936F59D3216FEBA60098BC50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
