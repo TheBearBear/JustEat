@@ -12,7 +12,7 @@ import CoreLocation
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
-    let buttons = ["Breakfast", "Lunch", "Dinner", "Dessert", "Coffee & Tea"]
+    let buttons = ["Breakfast", "Lunch", "Dinner", "Dessert", "Coffee"]
     var currentLocation: CLLocation?
     
     

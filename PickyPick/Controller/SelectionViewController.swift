@@ -25,7 +25,13 @@ class SelectionViewController: UIViewController {
         }
 
         let venueArray = AppHelper.decodeJsonVenues(json: data)
-        let places = AppHelper.decodeJsonPlaces(arrayOfVenues: venueArray)
-        print(places)
+
+//        for venueId in venueArray {
+        Request.searchVenueDetails(venueId: venueArray[0]) { response in
+            let place = AppHelper.decodeJsonPlaces(json: response!)
+            print(place)
+        }
+            
+//        }
     }
 }

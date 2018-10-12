@@ -21,7 +21,7 @@ class AppHelper {
     
     static func decodeJsonVenues(json: String) -> [String] {
         var venues = [String]()
-//        print(json)
+        print(json)
 //        guard let venuesJson = json.data(using: .utf8) else {
 //            return venues
 //        }
@@ -29,7 +29,6 @@ class AppHelper {
         if let dataFromString = json.data(using: .utf8, allowLossyConversion: false) {
             let json = try? JSON(data: dataFromString)
             
-//            let response = json!["response"]["group"]["results"][0]["venue"]["id"].stringValue
             let foundVenues = json!["response"]["group"]["results"].array
             for venue in foundVenues! {
                 let venueId = venue["venue"]["id"].stringValue
@@ -40,9 +39,30 @@ class AppHelper {
         return venues
     }
     
-    static func decodeJsonPlaces(arrayOfVenues: [String]) -> [Place] {
-//        json.data(using: .utf8)
-        let places = [Place]()
-        return places
+    static func decodeJsonPlaces(json: String) -> Place {
+        print(json)
+        var place: Place?
+        
+        if let dataFromString = json.data(using: .utf8, allowLossyConversion:  false) {
+            let json = try? JSON(data: dataFromString)
+            let venue = json!["response"]["venue"]
+            let name = venue["name"].stringValue
+            let phone = venue["contact"]["formattedPhone"].stringValue
+            let addressArray = venue["location"]["formattedAddress"].array
+            let lat = venue["location"]["lat"].floatValue
+            let lng = venue["location"]["lng"].floatValue
+            var address = [String]()
+            for anAddress in addressArray! {
+                address.append(anAddress.stringValue)
+            }
+            let price = venue["price"]["currency"].stringValue
+            let rating = venue["rating"].float
+            let ratingColor = venue["ratingColor"].stringValue
+            let hours = venue["hours"]["status"].stringValue
+            
+            place = Place(name: name, latitude: lat, longitude: lng, distance: nil, phone: phone, formattedAddress: address, iconUrl: nil, price: price, rating: rating, ratingColor: ratingColor, hours: hours)
+        }
+        
+        return place!
     }
 }

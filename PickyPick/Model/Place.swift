@@ -10,8 +10,14 @@ import Foundation
 
 struct Place {
     let name: String?
-    let address: String?
+    let latitude: Float?
+    let longitude: Float?
     let distance: Int?
+    let phone: String?
     let formattedAddress: [String]?
-    let icon: String?
+    let iconUrl: String?
+    let price: String?
+    let rating: Float?
+    let ratingColor: String?
+    let hours: String?
 }
