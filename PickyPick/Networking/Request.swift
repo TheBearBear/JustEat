@@ -30,6 +30,7 @@ class Request {
     static func searchVenueDetails(venueId: String, competionHandler: @escaping (String?) -> Void) {
         Alamofire.request("https://api.foursquare.com/v2/venues/\(venueId)?client_id=\(Constants.CLIENT_ID)&client_secret=\(Constants.CLIENT_SECRET)&v=20181010").responseData { response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+//                print(utf8Text)
                 competionHandler(utf8Text)
             }
         }

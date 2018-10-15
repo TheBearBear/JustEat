@@ -21,7 +21,7 @@ class AppHelper {
     
     static func decodeJsonVenues(json: String) -> [String] {
         var venues = [String]()
-        print(json)
+//        print(json)
 //        guard let venuesJson = json.data(using: .utf8) else {
 //            return venues
 //        }
@@ -40,7 +40,7 @@ class AppHelper {
     }
     
     static func decodeJsonPlaces(json: String) -> Place {
-        print(json)
+//        print(json)
         var place: Place?
         
         if let dataFromString = json.data(using: .utf8, allowLossyConversion:  false) {
@@ -60,7 +60,14 @@ class AppHelper {
             let ratingColor = venue["ratingColor"].stringValue
             let hours = venue["hours"]["status"].stringValue
             
-            place = Place(name: name, latitude: lat, longitude: lng, distance: nil, phone: phone, formattedAddress: address, iconUrl: nil, price: price, rating: rating, ratingColor: ratingColor, hours: hours)
+            let pathBP = venue["bestPhoto"]
+            let prefix = pathBP["prefix"].stringValue
+            let suffix = pathBP["suffix"].stringValue
+            let width = pathBP["suffix"].intValue
+            let height = pathBP["height"].intValue
+            
+            place = Place(name: name, latitude: lat, longitude: lng, phone: phone, formattedAddress: address, price: price, rating: rating, ratingColor: ratingColor, hours: hours, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)
+            
         }
         
         return place!
