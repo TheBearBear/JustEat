@@ -29,4 +29,15 @@ struct Place {
         }
         return "\(pP)\(pW)x\(pH)\(pS)"
     }
+    
+    func getFullAddress() -> String {
+        var returnStr = ""
+        guard let array = formattedAddress else {
+            return returnStr
+        }
+        for str in array {
+            returnStr += "\(str) "
+        }
+        return returnStr
+    }
 }

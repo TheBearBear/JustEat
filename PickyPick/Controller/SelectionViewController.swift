@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class SelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var jsonData: String? = nil
+//    let placeTemp = Place(name: name, latitude: lat, longitude: lng, phone: phone, formattedAddress: address, price: price, rating: rating, ratingColor: ratingColor, hours: hours, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)
+    
     fileprivate let cellId = "cell"
     
     let tableView : UITableView = {
@@ -19,11 +22,11 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         return tView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupData()
+//        setupData()
+        
         setupBackground()
         setUpTableView()
     }
@@ -52,7 +55,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(DisplayPlaceCell.self, forCellReuseIdentifier: cellId)
     }
     
     func setupData() {
@@ -61,14 +64,13 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         let venueArray = AppHelper.decodeJsonVenues(json: data)
-        
-        //        for venueId in venueArray {
-        Request.searchVenueDetails(venueId: venueArray[7]) { response in
-            let place = AppHelper.decodeJsonPlaces(json: response!)
-            //            print(place)
-        }
-        
-        //        }
+        print(venueArray)
+//        for venueId in venueArray {
+//            Request.searchVenueDetails(venueId: venueArray[7]) { response in
+//                let place = AppHelper.decodeJsonPlaces(json: response!)
+//                print(place)
+//            }
+//        }
     }
     
     // TableView Data Source
@@ -78,22 +80,23 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
-        cell.textLabel?.text = "Pick!"
-        cell.textLabel?.textColor = UIColor.white
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DisplayPlaceCell
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     // TableView Data Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // etc
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }

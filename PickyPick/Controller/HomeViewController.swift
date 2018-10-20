@@ -24,8 +24,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-//        setupNav()
+    
         setupButtons()
     }
     
@@ -40,14 +39,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
     
-//    func setupNav() {
-//        self.navigationItem.title = "PickyPick"
-//        self.navigationController?.navigationBar.barTintColor = UIColor.white
-//        self.navigationController?.navigationBar.isTranslucent = false
-//        self.navigationController?.navigationBar.barStyle = .black
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
-//    }
-    
     func setupButtons() {
         var buttonsDisplay = [UIView]()
         
@@ -59,6 +50,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             button.layer.cornerRadius = 10
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(clicked), for: .touchUpInside)
+            button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+            button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+            button.layer.shadowOpacity = 1.0
+            button.layer.shadowRadius = 0.0
+            button.layer.masksToBounds = false
+            button.layer.cornerRadius = 10
             buttonsDisplay.append(button)
         }
         

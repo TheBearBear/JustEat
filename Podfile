@@ -5,4 +5,5 @@ use_frameworks!
 target 'PickyPick' do
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON', '~> 4.0'
+    pod 'GooglePlaces'
 end

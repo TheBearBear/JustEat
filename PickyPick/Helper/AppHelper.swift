@@ -40,7 +40,6 @@ class AppHelper {
     }
     
     static func decodeJsonPlaces(json: String) -> Place {
-//        print(json)
         var place: Place?
         
         if let dataFromString = json.data(using: .utf8, allowLossyConversion:  false) {
