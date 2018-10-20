@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = HomeViewController()
-        GMSPlacesClient.provideAPIKey(Constants.GOOGLE_PLACES_KEY)
 //        let navigationController = UINavigationController(rootViewController: homeViewController)
 //
 //        UINavigationBar.appearance().prefersLargeTitles = true

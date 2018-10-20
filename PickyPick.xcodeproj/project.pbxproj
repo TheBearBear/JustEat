@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6489F67DCF58FF9266F45BD2 /* Pods_PickyPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B21770B8D51E23BFA43026B /* Pods_PickyPick.framework */; };
 		9321765C2145FD4C0045581F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* Extensions.swift */; };
 		935A2942216AFBDC000D2702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2941216AFBDC000D2702 /* Place.swift */; };
 		935A2944216B074F000D2702 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2943216B074F000D2702 /* SelectionViewController.swift */; };
@@ -19,11 +20,11 @@
 		938D9BEE2166C6D8007B4798 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9BED2166C6D8007B4798 /* AppHelper.swift */; };
 		938D9BF12166C796007B4798 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9BF02166C796007B4798 /* Request.swift */; };
 		93E311A121751B1300B0627B /* DisplayPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E311A021751B1200B0627B /* DisplayPlaceCell.swift */; };
-		B32209372B0940451B06F84E /* Pods_PickyPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.release.xcconfig"; sourceTree = "<group>"; };
+		3B21770B8D51E23BFA43026B /* Pods_PickyPick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickyPick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43D3F4B5E1C512106628D95B /* Pods-PickyPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.release.xcconfig"; sourceTree = "<group>"; };
 		9321765B2145FD4C0045581F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		935A2941216AFBDC000D2702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		935A2943216B074F000D2702 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +39,7 @@
 		938D9BED2166C6D8007B4798 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		938D9BF02166C796007B4798 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		93E311A021751B1200B0627B /* DisplayPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPlaceCell.swift; sourceTree = "<group>"; };
-		C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickyPick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.debug.xcconfig"; sourceTree = "<group>"; };
+		A3007BF3C813F62EB779970C /* Pods-PickyPick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,19 +47,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32209372B0940451B06F84E /* Pods_PickyPick.framework in Frameworks */,
 				936E180C216EA706007F47E6 /* SwiftyJSON.framework in Frameworks */,
+				6489F67DCF58FF9266F45BD2 /* Pods_PickyPick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5106B14D05006F172BBFFC37 /* Pods */ = {
+		4ECB8D8E0603A26FA41E47F5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */,
-				5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */,
+				A3007BF3C813F62EB779970C /* Pods-PickyPick.debug.xcconfig */,
+				43D3F4B5E1C512106628D95B /* Pods-PickyPick.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -85,8 +85,8 @@
 			children = (
 				93878A32214475CD00C5511B /* PickyPick */,
 				93878A31214475CD00C5511B /* Products */,
-				5106B14D05006F172BBFFC37 /* Pods */,
 				9B0517B8A9B57A805017C21C /* Frameworks */,
+				4ECB8D8E0603A26FA41E47F5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				936E180B216EA706007F47E6 /* SwiftyJSON.framework */,
-				C6CB28A79AC3DC58493CC9C9 /* Pods_PickyPick.framework */,
+				3B21770B8D51E23BFA43026B /* Pods_PickyPick.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,12 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93878A42214475D000C5511B /* Build configuration list for PBXNativeTarget "PickyPick" */;
 			buildPhases = (
-				9C65F80749FB4E618F313F3B /* [CP] Check Pods Manifest.lock */,
+				080391F3075D798D054FE359 /* [CP] Check Pods Manifest.lock */,
 				93878A2C214475CD00C5511B /* Sources */,
 				93878A2D214475CD00C5511B /* Frameworks */,
 				93878A2E214475CD00C5511B /* Resources */,
-				EA82CC08FF6B110A1168811E /* [CP] Embed Pods Frameworks */,
-				2423FC02A741CA8136DF2EE2 /* [CP] Copy Pods Resources */,
+				F8AE5BD1515BA46E79FFF7A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,7 +218,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2423FC02A741CA8136DF2EE2 /* [CP] Copy Pods Resources */ = {
+		080391F3075D798D054FE359 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,30 +226,12 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-resources.sh",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C65F80749FB4E618F313F3B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PickyPick-checkManifestLockResult.txt",
 			);
@@ -259,10 +240,12 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA82CC08FF6B110A1168811E /* [CP] Embed Pods Frameworks */ = {
+		F8AE5BD1515BA46E79FFF7A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick-frameworks.sh",
@@ -270,6 +253,8 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -428,7 +413,7 @@
 		};
 		93878A43214475D000C5511B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB441DC1B4E513662C2B6CD3 /* Pods-PickyPick.debug.xcconfig */;
+			baseConfigurationReference = A3007BF3C813F62EB779970C /* Pods-PickyPick.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;
@@ -446,7 +431,7 @@
 		};
 		93878A44214475D000C5511B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5242B29360ED1CBEA3A94E13 /* Pods-PickyPick.release.xcconfig */;
+			baseConfigurationReference = 43D3F4B5E1C512106628D95B /* Pods-PickyPick.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A56S2B36WE;

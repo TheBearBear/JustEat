@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GooglePlaces
 
 class SelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
