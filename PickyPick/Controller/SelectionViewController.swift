@@ -10,22 +10,36 @@ import UIKit
 
 class SelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var jsonData: String? = nil
-//    let placeTemp = Place(name: name, latitude: lat, longitude: lng, phone: phone, formattedAddress: address, price: price, rating: rating, ratingColor: ratingColor, hours: hours, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)
-    
+    var jsonData: String?
+    var placeData: [Place]?
     fileprivate let cellId = "cell"
     
-    let tableView : UITableView = {
+    let tableView: UITableView = {
         let tView = UITableView()
         tView.translatesAutoresizingMaskIntoConstraints = false
+        tView.separatorStyle = .none
         return tView
+    }()
+    
+    let pickButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.titleLabel?.text = "Pick!"
+        return button
+    }()
+    
+    let backButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.text = "Go Back"
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupData()
-        
+        setupData()
         setupBackground()
         setUpTableView()
     }
@@ -43,6 +57,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func setUpTableView() {
         self.view.addSubview(tableView)
+        self.view.addSubview(pickButton)
         
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -62,14 +77,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         
-        let venueArray = AppHelper.decodeJsonVenues(json: data)
-        print(venueArray)
-//        for venueId in venueArray {
-//            Request.searchVenueDetails(venueId: venueArray[7]) { response in
-//                let place = AppHelper.decodeJsonPlaces(json: response!)
-//                print(place)
-//            }
-//        }
+        placeData = AppHelper.decodeJsonVenues(json: data)
     }
     
     // TableView Data Source
@@ -79,11 +87,14 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+//        print((placeData?.count)!)
+        return (placeData?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DisplayPlaceCell
+        let thePlace = placeData![indexPath.row]
+        cell.label.text = thePlace.name
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         return cell

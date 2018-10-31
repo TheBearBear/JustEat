@@ -19,56 +19,47 @@ class AppHelper {
         return todayString
     }
     
-    static func decodeJsonVenues(json: String) -> [String] {
-        var venues = [String]()
-//        print(json)
+    static func metersToMiles(meter: Int) -> Float {
+        return Float(meter) * 0.000621371
+    }
+    
+    static func decodeJsonVenues(json: String) -> [Place] {
+        var places = [Place]()
 //        guard let venuesJson = json.data(using: .utf8) else {
 //            return venues
 //        }
         
+//        print(json)
         if let dataFromString = json.data(using: .utf8, allowLossyConversion: false) {
             let json = try? JSON(data: dataFromString)
-            
+
             let foundVenues = json!["response"]["group"]["results"].array
             for venue in foundVenues! {
-                let venueId = venue["venue"]["id"].stringValue
-                venues.append(venueId)
+                let venueStart = venue["venue"]
+                let id = venueStart["id"].stringValue
+                let name = venueStart["name"].stringValue
+                
+                let lat = venueStart["location"]["lat"].floatValue
+                let lng = venueStart["location"]["lng"].floatValue
+                
+                var address = [String]()
+                let addressArray = venueStart["location"]["formattedAddress"].array
+                let distance = venueStart["location"]["distance"].intValue
+                for anAddress in addressArray! {
+                    address.append(anAddress.stringValue)
+                }
+                
+                let pathPhoto = venueStart["photo"]
+                let prefix = pathPhoto["prefix"].stringValue
+                let suffix = pathPhoto["suffix"].stringValue
+                let width = pathPhoto["suffix"].intValue
+                let height = pathPhoto["height"].intValue
+                
+                let aPlace = Place(id: id, name: name, latitude: lat, longitude: lng, formattedAddress: address, distance: distance, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)
+                places.append(aPlace)
             }
 
         }
-        return venues
-    }
-    
-    static func decodeJsonPlaces(json: String) -> Place {
-        var place: Place?
-        
-        if let dataFromString = json.data(using: .utf8, allowLossyConversion:  false) {
-            let json = try? JSON(data: dataFromString)
-            let venue = json!["response"]["venue"]
-            let name = venue["name"].stringValue
-            let phone = venue["contact"]["formattedPhone"].stringValue
-            let addressArray = venue["location"]["formattedAddress"].array
-            let lat = venue["location"]["lat"].floatValue
-            let lng = venue["location"]["lng"].floatValue
-            var address = [String]()
-            for anAddress in addressArray! {
-                address.append(anAddress.stringValue)
-            }
-            let price = venue["price"]["currency"].stringValue
-            let rating = venue["rating"].float
-            let ratingColor = venue["ratingColor"].stringValue
-            let hours = venue["hours"]["status"].stringValue
-            
-            let pathBP = venue["bestPhoto"]
-            let prefix = pathBP["prefix"].stringValue
-            let suffix = pathBP["suffix"].stringValue
-            let width = pathBP["suffix"].intValue
-            let height = pathBP["height"].intValue
-            
-            place = Place(name: name, latitude: lat, longitude: lng, phone: phone, formattedAddress: address, price: price, rating: rating, ratingColor: ratingColor, hours: hours, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)
-            
-        }
-        
-        return place!
+        return places
     }
 }

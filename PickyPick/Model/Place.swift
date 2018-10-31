@@ -9,15 +9,17 @@
 import Foundation
 
 struct Place {
+    let id: String?
     let name: String?
     let latitude: Float?
     let longitude: Float?
-    let phone: String?
+//    let phone: String?
     let formattedAddress: [String]?
-    let price: String?
-    let rating: Float?
-    let ratingColor: String?
-    let hours: String?
+//    let price: String?
+//    let rating: Float?
+//    let ratingColor: String?
+//    let hours: String?
+    let distance: Int?              // Distance is measured in Meters
     let photoPrefix: String?
     let photoSuffix: String?
     let photoWidth: Int?
