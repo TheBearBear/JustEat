@@ -17,8 +17,8 @@ class Request {
         Alamofire.request("https://api.foursquare.com/v2/search/recommendations?client_id=\(Constants.CLIENT_ID)&client_secret=\(Constants.CLIENT_SECRET)&v=20181010&ll=\(latitude),\(longitude)&intent=\(intent)&soryByDistance=true&openNow=true").responseJSON { response in
             
             // JSON - use response.result.value
-
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+//                print(utf8Text)
                 competionHandler(utf8Text)
             }
         }

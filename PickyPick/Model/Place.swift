@@ -42,4 +42,11 @@ struct Place {
         }
         return returnStr
     }
+    
+    func getDistanceMeters() -> Float {
+        guard let meters = distance else {
+            return 0
+        }
+        return AppHelper.metersToMiles(meter: meters)
+    }
 }

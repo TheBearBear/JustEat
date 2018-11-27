@@ -18,35 +18,55 @@ class DisplayPlaceCell: UITableViewCell {
         return view
     }()
     
-    var label: UILabel = {
+    var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    var addressStack: UIStackView = {
+        let stackView = UIStackView()
+        return stackView
+    }()
+    
+    var distanceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var addressLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setup()
     }
     
     func setup() {
         addSubview(displayView)
-        displayView.addSubview(label)
+        displayView.addSubview(nameLabel)
+        displayView.addSubview(distanceLabel)
+        displayView.addSubview(addressLabel)
         
-        let constraints = [displayView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-                           displayView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-                           displayView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-                           displayView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+        NSLayoutConstraint.activate([
+            displayView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            displayView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -13),
+            displayView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            displayView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 13),
                            
-                           label.topAnchor.constraint(equalTo: displayView.topAnchor),
-                           label.leadingAnchor.constraint(equalTo: displayView.leadingAnchor),
-                           label.bottomAnchor.constraint(equalTo: displayView.bottomAnchor),
-                           label.trailingAnchor.constraint(equalTo: displayView.trailingAnchor)
-                           ]
-        NSLayoutConstraint.activate(constraints)
-        
+            nameLabel.topAnchor.constraint(equalTo: displayView.topAnchor, constant: 5),
+            nameLabel.leadingAnchor.constraint(equalTo: displayView.leadingAnchor, constant: 5),
+                           
+            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            addressLabel.leadingAnchor.constraint(equalTo: displayView.leadingAnchor, constant: 5),
+            
+            distanceLabel.bottomAnchor.constraint(equalTo: displayView.bottomAnchor, constant: -6),
+            distanceLabel.trailingAnchor.constraint(equalTo: displayView.trailingAnchor, constant: -6)
+            ])
     }
     
     required init?(coder aDecoder: NSCoder) {

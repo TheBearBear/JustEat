@@ -24,15 +24,25 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     let pickButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        button.titleLabel?.text = "Pick!"
+        button.layer.cornerRadius = 25
+        button.backgroundColor = UIColor.red
+        button.setTitle("Pick!", for: .normal)
+        
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 0.0
+        
         return button
     }()
     
-    let backButton: UIButton = {
+    let menuButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.text = "Go Back"
+        button.layer.cornerRadius = 25
+        button.backgroundColor = UIColor.red
+        button.setTitle("Menu", for: .normal)
+        button.addTarget(self, action: #selector(goBackToMenu), for: .touchUpInside)
         return button
     }()
     
@@ -48,7 +58,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         let blurEffect = UIBlurEffect(style: .regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.frame
-        let backgroundImage = UIImage(named: "bg")
+        let backgroundImage = UIImage(named: "red")
         let imageView = UIImageView(image: backgroundImage)
         imageView.contentMode = .scaleAspectFill
         imageView.addSubview(blurEffectView)
@@ -58,12 +68,25 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     func setUpTableView() {
         self.view.addSubview(tableView)
         self.view.addSubview(pickButton)
+        self.view.addSubview(menuButton)
         
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            pickButton.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+            pickButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+            pickButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -7),
+            pickButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -7),
+            
+            menuButton.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+            menuButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2),
+            menuButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -7),
+            menuButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 7)
+            ])
+    
         tableView.backgroundColor = UIColor.clear
         
         tableView.delegate = self
@@ -76,27 +99,38 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let data = jsonData else {
             return
         }
-        
         placeData = AppHelper.decodeJsonVenues(json: data)
     }
+
+    @objc func goBackToMenu() {
+        let homeVC = HomeViewController()
+        self.present(homeVC, animated: true)
+    }
     
-    // TableView Data Source
+    // TABLEVIEW DATA SOURCE
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print((placeData?.count)!)
         return (placeData?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DisplayPlaceCell
         let thePlace = placeData![indexPath.row]
-        cell.label.text = thePlace.name
+        
+        cell.nameLabel.attributedText = AppHelper.attributedText(str: thePlace.name!, fontStyle: "ChalkboardSE-Bold", fontSize: 25, color: UIColor.red)
+        
+        cell.distanceLabel.text = String(AppHelper.metersToMiles(meter: thePlace.distance!)) + " miles away"
+        
+        if let address = thePlace.formattedAddress?[0] {
+            cell.addressLabel.text = AppHelper.subStrCharacter(str: address, char: ")")
+        }
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
+        
         return cell
     }
     
@@ -104,9 +138,10 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         return 150
     }
     
-    // TableView Data Delegate
+    // TABLEVIEW DATA DELEGATE
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedCell = tableView.cellForRow(at: indexPath) as! DisplayPlaceCell
+        print(selectedCell.nameLabel.text!)
     }
 }

@@ -14,19 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let homeViewController = HomeViewController()
-//        let navigationController = UINavigationController(rootViewController: homeViewController)
-//
-//        UINavigationBar.appearance().prefersLargeTitles = true
-//        UINavigationBar.appearance().largeTitleTextAttributes =
-//            [NSAttributedStringKey.foregroundColor: UIColor.mainRed,
-//             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 40) ??
-//                UIFont.systemFont(ofSize: 40)]
-
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
         return true

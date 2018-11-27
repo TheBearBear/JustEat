@@ -20,16 +20,13 @@ class AppHelper {
     }
     
     static func metersToMiles(meter: Int) -> Float {
-        return Float(meter) * 0.000621371
+        let returnValue = Float(meter) * 0.000621371
+        return round(returnValue * 100)/100
     }
     
     static func decodeJsonVenues(json: String) -> [Place] {
         var places = [Place]()
-//        guard let venuesJson = json.data(using: .utf8) else {
-//            return venues
-//        }
         
-//        print(json)
         if let dataFromString = json.data(using: .utf8, allowLossyConversion: false) {
             let json = try? JSON(data: dataFromString)
 
@@ -61,5 +58,18 @@ class AppHelper {
 
         }
         return places
+    }
+    
+    static func subStrCharacter(str: String, char: Character) -> String {
+        if str.contains(char) {
+            let index = str.range(of: "(")?.lowerBound
+            return String(str[str.startIndex..<index!])
+        } else {
+            return str
+        }
+    }
+    
+    static func attributedText(str: String, fontStyle: String, fontSize: CGFloat, color: UIColor) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: str, attributes: [NSAttributedString.Key.foregroundColor: color, NSMutableAttributedString.Key.font: UIFont(name: fontStyle, size: fontSize)!])
     }
 }
