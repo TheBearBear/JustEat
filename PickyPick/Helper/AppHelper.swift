@@ -46,10 +46,10 @@ class AppHelper {
                     address.append(anAddress.stringValue)
                 }
                 
-                let pathPhoto = venueStart["photo"]
+                let pathPhoto = venue["photo"]
                 let prefix = pathPhoto["prefix"].stringValue
                 let suffix = pathPhoto["suffix"].stringValue
-                let width = pathPhoto["suffix"].intValue
+                let width = pathPhoto["width"].intValue
                 let height = pathPhoto["height"].intValue
                 
                 let aPlace = Place(id: id, name: name, latitude: lat, longitude: lng, formattedAddress: address, distance: distance, photoPrefix: prefix, photoSuffix: suffix, photoWidth: width, photoHeight: height)

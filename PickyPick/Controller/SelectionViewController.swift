@@ -26,10 +26,11 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.backgroundColor = UIColor.red
-        button.setTitle("Pick!", for: .normal)
+        button.setAttributedTitle(AppHelper.attributedText(str: "Pick!", fontStyle: Constants.CHALKFONT_REG, fontSize: 20, color: UIColor.white), for: .normal)
+        button.addTarget(self, action: #selector(goToPick), for: .touchUpInside)
         
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 0.0
         
@@ -41,7 +42,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.backgroundColor = UIColor.red
-        button.setTitle("Menu", for: .normal)
+        button.setAttributedTitle(AppHelper.attributedText(str: "Menu", fontStyle: Constants.CHALKFONT_REG, fontSize: 20, color: UIColor.white), for: .normal)
         button.addTarget(self, action: #selector(goBackToMenu), for: .touchUpInside)
         return button
     }()
@@ -66,9 +67,9 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func setUpTableView() {
-        self.view.addSubview(tableView)
-        self.view.addSubview(pickButton)
-        self.view.addSubview(menuButton)
+        view.addSubview(tableView)
+        view.addSubview(pickButton)
+        view.addSubview(menuButton)
         
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -107,6 +108,17 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         self.present(homeVC, animated: true)
     }
     
+    @objc func goToPick() {
+        if let places = placeData {
+            let randomNumber = Int.random(in: 0..<places.count)
+            let pickVC = PickViewController()
+            pickVC.pickedPlace = places[randomNumber]
+            present(pickVC, animated: true)
+        } else {
+            return
+        }
+    }
+    
     // TABLEVIEW DATA SOURCE
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -121,12 +133,14 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DisplayPlaceCell
         let thePlace = placeData![indexPath.row]
         
-        cell.nameLabel.attributedText = AppHelper.attributedText(str: thePlace.name!, fontStyle: "ChalkboardSE-Bold", fontSize: 25, color: UIColor.red)
+        cell.nameLabel.attributedText = AppHelper.attributedText(str: thePlace.name!, fontStyle: Constants.CHALKFONT_BOLD, fontSize: 20, color: UIColor.red)
         
-        cell.distanceLabel.text = String(AppHelper.metersToMiles(meter: thePlace.distance!)) + " miles away"
+        let distanceText = String(AppHelper.metersToMiles(meter: thePlace.distance!)) + " miles away"
+        cell.distanceLabel.attributedText = AppHelper.attributedText(str: distanceText, fontStyle: Constants.CHALKFONT_LIGHT, fontSize: 15, color: UIColor.red)
         
         if let address = thePlace.formattedAddress?[0] {
-            cell.addressLabel.text = AppHelper.subStrCharacter(str: address, char: ")")
+            let addressText = AppHelper.subStrCharacter(str: address, char: ")")
+            cell.addressLabel.attributedText = AppHelper.attributedText(str: addressText, fontStyle: Constants.CHALKFONT_REG, fontSize: 17, color: UIColor.red)
         }
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear

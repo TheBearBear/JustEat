@@ -59,7 +59,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             buttonsDisplay.append(button)
         }
         
-        
         let stackView = UIStackView(arrangedSubviews: buttonsDisplay)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually

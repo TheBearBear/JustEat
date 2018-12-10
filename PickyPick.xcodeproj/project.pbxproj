@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6489F67DCF58FF9266F45BD2 /* Pods_PickyPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B21770B8D51E23BFA43026B /* Pods_PickyPick.framework */; };
 		9321765C2145FD4C0045581F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321765B2145FD4C0045581F /* Extensions.swift */; };
+		93266ACA21B1FFBB00867426 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93266AC921B1FFBB00867426 /* PickViewController.swift */; };
 		935A2942216AFBDC000D2702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2941216AFBDC000D2702 /* Place.swift */; };
 		935A2944216B074F000D2702 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A2943216B074F000D2702 /* SelectionViewController.swift */; };
 		936E180C216EA706007F47E6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936E180B216EA706007F47E6 /* SwiftyJSON.framework */; };
@@ -26,6 +27,7 @@
 		3B21770B8D51E23BFA43026B /* Pods_PickyPick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickyPick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D3F4B5E1C512106628D95B /* Pods-PickyPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickyPick.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickyPick/Pods-PickyPick.release.xcconfig"; sourceTree = "<group>"; };
 		9321765B2145FD4C0045581F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		93266AC921B1FFBB00867426 /* PickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		935A2941216AFBDC000D2702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		935A2943216B074F000D2702 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		936E180B216EA706007F47E6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 			children = (
 				93878A35214475CD00C5511B /* HomeViewController.swift */,
 				935A2943216B074F000D2702 /* SelectionViewController.swift */,
+				93266AC921B1FFBB00867426 /* PickViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				9321765C2145FD4C0045581F /* Extensions.swift in Sources */,
 				93878A36214475CD00C5511B /* HomeViewController.swift in Sources */,
 				93E311A121751B1300B0627B /* DisplayPlaceCell.swift in Sources */,
+				93266ACA21B1FFBB00867426 /* PickViewController.swift in Sources */,
 				938D9BF12166C796007B4798 /* Request.swift in Sources */,
 				935A2942216AFBDC000D2702 /* Place.swift in Sources */,
 				93878A34214475CD00C5511B /* AppDelegate.swift in Sources */,
